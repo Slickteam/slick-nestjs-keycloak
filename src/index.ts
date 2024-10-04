@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard, KeycloakConnectModule, RoleGuard, PolicyEnforcementMode, TokenValidation } from 'nest-keycloak-connect';
 import { KeycloakUser } from './keycloak.interface';
+export * from 'nest-keycloak-connect';
 
 @Module({
   imports: [
