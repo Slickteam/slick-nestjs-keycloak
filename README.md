@@ -1,5 +1,7 @@
 # Slick Nestjs Keycloak
 
+Available on npmjs.org : [@slickteam/nestjs-keycloak](https://www.npmjs.com/package/@slickteam/nestjs-keycloak)
+
 ## Usage
 
 - Install dependency
@@ -38,11 +40,11 @@ class ExempleModule {}
 
 Nestjs
 
-- `@nestjs/common`: `^10.4.4`
-- `@nestjs/config`: `^3.2.3`
-- `@nestjs/core`: `^10.4.4`
+- `@nestjs/common`: `^10.4.7`
+- `@nestjs/config`: `^3.3.0`
+- `@nestjs/core`: `^10.4.7`
 
 Keycloak
 
-- `keycloak-connect`: `^25.0.6`
+- `keycloak-connect`: `^26.0.5`
 - `nest-keycloak-connect`: `^1.10.1`
