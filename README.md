@@ -40,11 +40,11 @@ class ExempleModule {}
 
 Nestjs
 
-- `@nestjs/common`: `^11.0.4`
+- `@nestjs/common`: `^11.0.7`
 - `@nestjs/config`: `^4.0.0`
-- `@nestjs/core`: `^11.0.4`
+- `@nestjs/core`: `^11.0.7`
 
 Keycloak
 
-- `keycloak-connect`: `^26.1.0`
-- `nest-keycloak-connect`: `^1.10.1`
+- `keycloak-connect`: `^26.1.1`
+- `nest-keycloak-connect`: `^2.0.0-alpha.0`

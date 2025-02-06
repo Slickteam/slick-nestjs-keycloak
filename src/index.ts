@@ -1,9 +1,21 @@
-import { ConfigService } from '@nestjs/config';
 import { Module } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
-import { AuthGuard, KeycloakConnectModule, RoleGuard, PolicyEnforcementMode, TokenValidation } from 'nest-keycloak-connect';
+import {
+  AuthGuard,
+  EnforcerOptions,
+  KeycloakConnectModule,
+  PolicyEnforcementMode,
+  Public,
+  Resource,
+  ResourceGuard,
+  RoleGuard,
+  Roles,
+  Scopes,
+  TokenValidation,
+} from 'nest-keycloak-connect';
+
 import { KeycloakUser } from './keycloak.interface';
-import { Public, AuthenticatedUser, Scopes, Roles, Resource, EnforcerOptions, ResourceGuard, Unprotected } from 'nest-keycloak-connect';
 
 @Module({
   imports: [
@@ -42,10 +54,8 @@ export {
   TokenValidation,
   ResourceGuard,
   Public,
-  AuthenticatedUser,
   Scopes,
   Roles,
   Resource,
   EnforcerOptions,
-  Unprotected,
 };
