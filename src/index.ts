@@ -5,6 +5,7 @@ import {
   AuthGuard,
   EnforcerOptions,
   KeycloakConnectModule,
+  KeycloakUser,
   PolicyEnforcementMode,
   Public,
   Resource,
@@ -15,7 +16,7 @@ import {
   TokenValidation,
 } from 'nest-keycloak-connect';
 
-import { KeycloakUser } from './keycloak.interface';
+import { IKeycloakUser } from './keycloak.interface';
 
 @Module({
   imports: [
@@ -46,8 +47,9 @@ class KeycloakModule {}
 
 export {
   KeycloakModule,
-  KeycloakUser,
+  IKeycloakUser,
   // Keycloak lib
+  KeycloakUser,
   AuthGuard,
   RoleGuard,
   PolicyEnforcementMode,

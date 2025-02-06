@@ -1,4 +1,4 @@
-export interface KeycloakUser {
+export interface IKeycloakUser {
   exp: number; // Timestamp token expiration
   iat: number; // Timestamp token issued at
   auth_time: number; // Timestamp session authentification
