@@ -22,8 +22,7 @@ import { IKeycloakUser } from './keycloak.interface';
   imports: [
     KeycloakConnectModule.registerAsync({
       useFactory: (configService: ConfigService) => {
-        const policyEnforcement =
-          configService.get('KEYCLOAK_POLICY_ENFORCEMENT_MODE') ?? PolicyEnforcementMode.PERMISSIVE;
+        const policyEnforcement = configService.get('KEYCLOAK_POLICY_ENFORCEMENT_MODE') ?? PolicyEnforcementMode.PERMISSIVE;
         const tokenValidation = configService.get('KEYCLOAK_TOKEN_VALIDATION') ?? TokenValidation.OFFLINE;
 
         return {

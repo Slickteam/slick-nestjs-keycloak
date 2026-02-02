@@ -47,10 +47,7 @@ import { ConfigModule } from '@nestjs/config';
 import { KeycloakModule } from '@slickteam/nestjs-keycloak';
 
 @Module({
-  imports: [
-    ConfigModule.forRoot(),
-    KeycloakModule,
-  ],
+  imports: [ConfigModule.forRoot(), KeycloakModule],
 })
 export class AppModule {}
 ```
@@ -101,7 +98,7 @@ Utilisez le décorateur `@KeycloakUser()` pour accéder aux informations de l'ut
 
 ```typescript
 import { Controller, Get } from '@nestjs/common';
-import { KeycloakUser, IKeycloakUser } from '@slickteam/nestjs-keycloak';
+import { IKeycloakUser, KeycloakUser } from '@slickteam/nestjs-keycloak';
 
 @Controller('profile')
 export class ProfileController {
@@ -121,56 +118,56 @@ export class ProfileController {
 
 ### Exports disponibles
 
-| Export                   | Description                                      |
-| ------------------------ | ------------------------------------------------ |
-| `KeycloakModule`         | Module principal à importer                      |
-| `IKeycloakUser`          | Interface TypeScript de l'utilisateur            |
-| `KeycloakUser`           | Décorateur pour injecter l'utilisateur           |
-| `Public`                 | Décorateur pour les routes publiques             |
-| `Roles`                  | Décorateur pour restreindre par rôles            |
-| `Scopes`                 | Décorateur pour restreindre par scopes           |
-| `Resource`               | Décorateur pour définir une ressource            |
-| `AuthGuard`              | Guard d'authentification                         |
-| `RoleGuard`              | Guard de vérification des rôles                  |
-| `ResourceGuard`          | Guard de vérification des ressources             |
-| `PolicyEnforcementMode`  | Enum des modes d'application des politiques      |
-| `TokenValidation`        | Enum des modes de validation des tokens          |
-| `EnforcerOptions`        | Options de configuration de l'enforcer           |
+| Export                  | Description                                 |
+| ----------------------- | ------------------------------------------- |
+| `KeycloakModule`        | Module principal à importer                 |
+| `IKeycloakUser`         | Interface TypeScript de l'utilisateur       |
+| `KeycloakUser`          | Décorateur pour injecter l'utilisateur      |
+| `Public`                | Décorateur pour les routes publiques        |
+| `Roles`                 | Décorateur pour restreindre par rôles       |
+| `Scopes`                | Décorateur pour restreindre par scopes      |
+| `Resource`              | Décorateur pour définir une ressource       |
+| `AuthGuard`             | Guard d'authentification                    |
+| `RoleGuard`             | Guard de vérification des rôles             |
+| `ResourceGuard`         | Guard de vérification des ressources        |
+| `PolicyEnforcementMode` | Enum des modes d'application des politiques |
+| `TokenValidation`       | Enum des modes de validation des tokens     |
+| `EnforcerOptions`       | Options de configuration de l'enforcer      |
 
 ### Interface `IKeycloakUser`
 
 ```typescript
 interface IKeycloakUser {
-  exp: number;              // Timestamp d'expiration du token
-  iat: number;              // Timestamp d'émission du token
-  auth_time: number;        // Timestamp d'authentification de la session
-  iss: string;              // URL de l'émetteur
-  sub: string;              // ID utilisateur Keycloak
-  aud: string;              // Audience
-  typ: string;              // Type de token
+  exp: number; // Timestamp d'expiration du token
+  iat: number; // Timestamp d'émission du token
+  auth_time: number; // Timestamp d'authentification de la session
+  iss: string; // URL de l'émetteur
+  sub: string; // ID utilisateur Keycloak
+  aud: string; // Audience
+  typ: string; // Type de token
   realm_access: {
-    roles: string[];        // Rôles du realm
+    roles: string[]; // Rôles du realm
   };
-  sid: string;              // ID de session
-  scope: string;            // Scopes accordés
-  email_verified: boolean;  // Email vérifié
-  email: string;            // Adresse email
-  name: string;             // Nom complet
-  given_name: string;       // Prénom
-  family_name: string;      // Nom de famille
+  sid: string; // ID de session
+  scope: string; // Scopes accordés
+  email_verified: boolean; // Email vérifié
+  email: string; // Adresse email
+  name: string; // Nom complet
+  given_name: string; // Prénom
+  family_name: string; // Nom de famille
   preferred_username: string; // Nom d'utilisateur
 }
 ```
 
 ## Dépendances
 
-| Package                  | Version          |
-| ------------------------ | ---------------- |
-| `@nestjs/common`         | ^11.1            |
-| `@nestjs/config`         | ^4.0             |
-| `@nestjs/core`           | ^11.1            |
-| `keycloak-connect`       | ^26.1.1          |
-| `nest-keycloak-connect`  | ^2.0.0-alpha.2   |
+| Package                 | Version        |
+| ----------------------- | -------------- |
+| `@nestjs/common`        | ^11.1          |
+| `@nestjs/config`        | ^4.0           |
+| `@nestjs/core`          | ^11.1          |
+| `keycloak-connect`      | ^26.1.1        |
+| `nest-keycloak-connect` | ^2.0.0-alpha.2 |
 
 ## Licence
 

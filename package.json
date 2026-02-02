@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/nestjs-keycloak",
   "description": "Module for Keycloak with Nestjs",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "keywords": [
     "Slickteam",
     "Nestjs",
