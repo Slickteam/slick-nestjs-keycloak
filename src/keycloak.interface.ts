@@ -1,18 +1,38 @@
+/**
+ * Represents a decoded Keycloak JWT token payload.
+ * Contains standard OIDC claims and Keycloak-specific fields.
+ */
 export interface IKeycloakUser {
-  exp: number; // Timestamp token expiration
-  iat: number; // Timestamp token issued at
-  auth_time: number; // Timestamp session authentification
-  iss: string; // Issuer url
-  sub: string; // Keycloak user ID
-  aud: string; // Audience
-  typ: string; // Type of token
+  /** Token expiration timestamp (Unix epoch) */
+  exp: number;
+  /** Token issued at timestamp (Unix epoch) */
+  iat: number;
+  /** Session authentication timestamp (Unix epoch) */
+  auth_time: number;
+  /** Issuer URL (Keycloak realm URL) */
+  iss: string;
+  /** Subject - Keycloak user unique identifier */
+  sub: string;
+  /** Audience - intended recipient of the token */
+  aud: string;
+  /** Token type (e.g., "Bearer") */
+  typ: string;
+  /** Realm-level role assignments */
   realm_access: { roles: string[] };
-  sid: string; // Session id
+  /** Session identifier */
+  sid: string;
+  /** OAuth scopes granted to this token */
   scope: string;
+  /** Whether the user's email has been verified */
   email_verified: boolean;
+  /** User's email address */
   email: string;
-  name: string; // Full name
+  /** User's full name (given_name + family_name) */
+  name: string;
+  /** User's first name */
   given_name: string;
+  /** User's last name */
   family_name: string;
+  /** User's preferred username for display */
   preferred_username: string;
 }
