@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/nestjs-keycloak",
   "description": "Module for Keycloak with Nestjs",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "keywords": [
     "Slickteam",
     "Nestjs",
@@ -37,21 +37,21 @@
     "prettier:fix": "slick-prettier --cache --write ."
   },
   "dependencies": {
-    "@nestjs/common": "11.1.13",
+    "@nestjs/common": "11.1.14",
     "@nestjs/config": "4.0.3",
-    "@nestjs/core": "11.1.13",
+    "@nestjs/core": "11.1.14",
     "keycloak-connect": "26.1.1",
     "nest-keycloak-connect": "2.0.0-alpha.2"
   },
   "devDependencies": {
     "@nestjs/cli": "11.0.16",
     "@slickteam/prettier": "2.0.3",
-    "@types/node": "24.10.12",
+    "@types/node": "24.10.13",
     "ts-loader": "9.5.4",
     "ts-node": "10.9.2",
     "tsconfig-paths": "4.2.0",
     "typescript": "5.9.3"
   },
   "prettier": "@slickteam/prettier",
-  "packageManager": "pnpm@10.29.2"
+  "packageManager": "pnpm@10.30.1"
 }
